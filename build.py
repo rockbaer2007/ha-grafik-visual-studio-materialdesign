@@ -11,7 +11,9 @@ def build():
     target = ROOT / 'dist' / f'ugso.materialdesign-{version}.wg'
     target.parent.mkdir(exist_ok=True)
     with ZipFile(target, 'w') as archive:
-        for name in ['manifest.json', 'icons/palette.svg', 'icons/dialog.svg', 'LICENSE.txt', 'README.md']:
+        manifest = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))
+        icons = {manifest['icon'], *(widget['icon'] for widget in manifest['widgets'])}
+        for name in ['manifest.json', *sorted(icons), 'LICENSE.txt', 'README.md']:
             info = ZipInfo(name, (2026, 10, 4, 0, 0, 0))
             info.compress_type = ZIP_DEFLATED
             body = (ROOT / name).read_text(encoding='utf-8')

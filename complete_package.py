@@ -1,7 +1,7 @@
 """Generate the remaining original UGSo declarations; no ioBroker runtime code.
 
-The public ioBroker widget catalog is the functional reference. The first three
-definitions remain byte-for-byte equivalent so installed packages update safely.
+The public ioBroker widget catalog is the functional reference. Existing runtime
+contracts are preserved; preview icons are assigned from the explicit catalog.
 """
 import json
 from pathlib import Path
@@ -50,7 +50,6 @@ def definition(slug,label,family,groups=(),defaults=None):
 
 def generate():
     manifest=json.loads((ROOT/'manifest.json').read_text(encoding='utf-8'))
-    manifest['version']='1.0.0'
     manifest['widgets']=manifest['widgets'][:3]
     widgets=manifest['widgets']
     for slug,label in [('autocomplete','Autocomplete'),('select','Select'),('input','Input')]:
@@ -92,6 +91,9 @@ def generate():
         for i in range(10):
             groups.append(group(f'Ansicht [{i}]',field(f'targetPage{i}','Studio-Seite'),field(f'viewLabel{i}','Bezeichnung',f'Seite {i+1}'),field(f'viewValue{i}','Zustandswert',str(i)),field(f'viewHeight{i}','Höhe',240)))
         widgets.append(definition(slug,label,'layout',groups,dict(layoutKind=kind,width=600,height=400)))
+    icon_map=json.loads((ROOT/'icons/catalog.json').read_text(encoding='utf-8'))
+    for widget in widgets:
+        widget['icon']=icon_map[widget['type'].split('/')[-1]]
     (ROOT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     return manifest
 

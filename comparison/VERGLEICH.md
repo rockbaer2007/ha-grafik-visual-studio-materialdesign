@@ -1,6 +1,6 @@
 # MaterialDesign: Widgetvergleich
 
-Paket 1.0.0 / Studio ab 0.1.215. Alle Einträge sind im Vergleichsprojekt enthalten.
+Paket 1.0.1 / Studio ab 0.1.216. Alle Einträge sind im Vergleichsprojekt enthalten.
 
 Die Spalten bleiben bis zum gemeinsamen Vergleich offen. Prüfen: kompakte und
 erweiterte Eigenschaften, Hell/Dunkel/Klassisch/Material 3, Zustandswechsel und Runtime.

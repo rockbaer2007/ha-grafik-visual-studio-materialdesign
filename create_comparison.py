@@ -40,7 +40,7 @@ if __name__=='__main__':
     target.parent.mkdir(exist_ok=True)
     target.write_text(json.dumps(comparison(),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     manifest=json.loads((ROOT/'manifest.json').read_text(encoding='utf-8'))
-    checklist=['# MaterialDesign: Widgetvergleich','', 'Paket 1.0.0 / Studio ab 0.1.215. Alle Einträge sind im Vergleichsprojekt enthalten.', '', 'Die Spalten bleiben bis zum gemeinsamen Vergleich offen. Prüfen: kompakte und', 'erweiterte Eigenschaften, Hell/Dunkel/Klassisch/Material 3, Zustandswechsel und Runtime.', '', '| Nr. | Widget | Vergleichsseite | Optik | Optionen | Funktion |', '| --- | --- | --- | --- | --- | --- |']
+    checklist=['# MaterialDesign: Widgetvergleich','', f"Paket {manifest['version']} / Studio ab 0.1.216. Alle Einträge sind im Vergleichsprojekt enthalten.", '', 'Die Spalten bleiben bis zum gemeinsamen Vergleich offen. Prüfen: kompakte und', 'erweiterte Eigenschaften, Hell/Dunkel/Klassisch/Material 3, Zustandswechsel und Runtime.', '', '| Nr. | Widget | Vergleichsseite | Optik | Optionen | Funktion |', '| --- | --- | --- | --- | --- | --- |']
     for i,w in enumerate(manifest['widgets']):
         checklist.append(f'| {i+1} | {w["label"]} | {i//6+1} | offen | offen | offen |')
     checklist.extend(['','Die erste automatische Prüfung bestätigt Paketvertrag, Darstellung aller Varianten,','Autocomplete-Auswahl und gemeinsame Renderer-/Recorder-Logik. Sie ersetzt noch keinen','direkten Vergleich mit allen Originaleinstellungen oder einen Test mit echten HA-Entitäten.',''])

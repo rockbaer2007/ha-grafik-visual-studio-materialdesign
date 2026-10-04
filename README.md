@@ -3,7 +3,14 @@
 Externes Widget-Set für HA Grafik Visual Studio, inspiriert von
 [ioBroker VIS2 Material Design](https://github.com/typhosj/ioBroker.vis2-materialdesign).
 
-Version **1.0.0**, MIT, benötigt Studio **0.1.215** oder neuer.
+Version **1.0.1**, MIT mit MDI-Icon-Lizenzhinweisen, benötigt Studio **0.1.216** oder neuer.
+
+Die Palette verwendet die originalen MDI-Symbole pro Widget: blau (#44739e),
+weiße Kachel und abgerundete Ecken. Alle 49 Zuordnungen liegen als lokale SVGs
+vor, ohne Font- oder Internet-Abhängigkeit. `icons/catalog.json` dokumentiert
+die Zuordnung; LICENSE.txt enthält die Pictogrammers- und Apache-2.0-Hinweise.
+Studio 0.1.216 erlaubt reine Icon-Updates bestehender Pakete; Eigenschaften,
+Standardwerte und Renderer bleiben bei diesem Update unverändert.
 
 Das Set enthält jetzt **49 Widgets**: alle Button- und Icon-Button-Varianten,
 Checkbox/Switch, Input/Select/Autocomplete, Slider/Slider Round, Value, Card,
@@ -102,8 +109,9 @@ the catalog registration form for review. No automatic catalog registration.
 
 ## Attribution
 
-Version 1.0.0 contains all 49 widget entries for comparison. It requires Studio
-0.1.215 and catalog 0.1.13. Input/select/autocomplete, action buttons, displays,
+Version 1.0.1 contains all 49 widget entries with their original MDI preview
+symbols as local SVGs. Icon license notices are included in LICENSE.txt.
+It requires Studio 0.1.216 and catalog 0.1.13. Input/select/autocomplete, action buttons, displays,
 lists/tables/alerts, charts/calendar and local page layouts use original UGSo
 renderers. HA entities replace ioBroker object IDs and Recorder replaces history
 adapters. The comparison project uses local demo values. Detailed visual parity
