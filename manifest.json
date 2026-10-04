@@ -1,0 +1,27 @@
+{
+  "format": "ha-grafik-widget-package",
+  "apiVersion": "0.2",
+  "id": "ugso.materialdesign",
+  "name": "UGSo Material Design",
+  "version": "0.1.0",
+  "license": "MIT",
+  "icon": "icons/palette.svg",
+  "widgets": [{
+    "type": "ugso.materialdesign/color-schemes",
+    "label": "Preview Color Schemes",
+    "icon": "icons/palette.svg",
+    "defaults": {"heading": "Material Design Widgets Color Schemes Preview", "designStyle": "legacy", "themeMode": "project", "width": 620, "height": 300, "padding": 0, "borderWidth": 0},
+    "render": {"kind": "material-color-schemes", "valueKey": "heading"},
+    "propertyGroups": [
+      {"label": "Allgemein", "fields": [
+        {"key": "heading", "label": "Überschrift", "type": "text"},
+        {"key": "designStyle", "label": "Gestaltungsstil", "type": "select", "options": ["legacy", "material3", "project"]},
+        {"key": "themeMode", "label": "Farbschema", "type": "select", "options": ["project", "light", "dark"]}
+      ]},
+      {"label": "Größe und Position", "fields": [
+        {"key": "width", "label": "Breite (px)", "type": "number", "min": 120, "max": 2000},
+        {"key": "height", "label": "Höhe (px)", "type": "number", "min": 80, "max": 2000}
+      ]}
+    ]
+  }]
+}

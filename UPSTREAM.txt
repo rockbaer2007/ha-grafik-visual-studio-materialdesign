@@ -1,0 +1,2 @@
+Palette reference commit: 7316488d33ad8eca172f64d28c6627c990330647
+https://raw.githubusercontent.com/typhosj/ioBroker.vis2-materialdesign/7316488d33ad8eca172f64d28c6627c990330647/src-widgets-ts/src/MaterialDesignColorScheme.tsx
