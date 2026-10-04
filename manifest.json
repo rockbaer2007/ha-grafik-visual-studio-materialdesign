@@ -3,25 +3,500 @@
   "apiVersion": "0.2",
   "id": "ugso.materialdesign",
   "name": "UGSo Material Design",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "icon": "icons/palette.svg",
-  "widgets": [{
-    "type": "ugso.materialdesign/color-schemes",
-    "label": "Preview Color Schemes",
-    "icon": "icons/palette.svg",
-    "defaults": {"heading": "Material Design Widgets Color Schemes Preview", "designStyle": "legacy", "themeMode": "project", "width": 620, "height": 300, "padding": 0, "borderWidth": 0},
-    "render": {"kind": "material-color-schemes", "valueKey": "heading"},
-    "propertyGroups": [
-      {"label": "Allgemein", "fields": [
-        {"key": "heading", "label": "Überschrift", "type": "text"},
-        {"key": "designStyle", "label": "Gestaltungsstil", "type": "select", "options": ["legacy", "material3", "project"]},
-        {"key": "themeMode", "label": "Farbschema", "type": "select", "options": ["project", "light", "dark"]}
-      ]},
-      {"label": "Größe und Position", "fields": [
-        {"key": "width", "label": "Breite (px)", "type": "number", "min": 120, "max": 2000},
-        {"key": "height", "label": "Höhe (px)", "type": "number", "min": 80, "max": 2000}
-      ]}
-    ]
-  }]
+  "widgets": [
+    {
+      "type": "ugso.materialdesign/color-schemes",
+      "label": "Preview Color Schemes",
+      "icon": "icons/palette.svg",
+      "defaults": {
+        "heading": "Material Design Widgets Color Schemes Preview",
+        "designStyle": "legacy",
+        "themeMode": "project",
+        "width": 620,
+        "height": 300,
+        "padding": 0,
+        "borderWidth": 0
+      },
+      "render": {
+        "kind": "material-color-schemes",
+        "valueKey": "heading"
+      },
+      "propertyGroups": [
+        {
+          "label": "Allgemein",
+          "fields": [
+            {
+              "key": "heading",
+              "label": "Überschrift",
+              "type": "text"
+            },
+            {
+              "key": "designStyle",
+              "label": "Gestaltungsstil",
+              "type": "select",
+              "options": [
+                "legacy",
+                "material3",
+                "project"
+              ]
+            },
+            {
+              "key": "themeMode",
+              "label": "Farbschema",
+              "type": "select",
+              "options": [
+                "project",
+                "light",
+                "dark"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Größe und Position",
+          "fields": [
+            {
+              "key": "width",
+              "label": "Breite (px)",
+              "type": "number",
+              "min": 120,
+              "max": 2000
+            },
+            {
+              "key": "height",
+              "label": "Höhe (px)",
+              "type": "number",
+              "min": 80,
+              "max": 2000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ugso.materialdesign/dialog",
+      "label": "Dialog",
+      "icon": "icons/dialog.svg",
+      "defaults": {
+        "width": 140,
+        "height": 36,
+        "padding": 0,
+        "borderWidth": 0,
+        "designStyle": "material3",
+        "showAdvanced": false,
+        "themeMode": "project",
+        "showDialogMethod": "button",
+        "entityId": "",
+        "fullscreenResolutionLower": 360,
+        "vibrateOnMobilDevices": 50,
+        "clickSoundPlay": false,
+        "clickSoundVolume": 0.5,
+        "targetPage": "",
+        "buttonStyle": "raised",
+        "labelText": "Dialog öffnen",
+        "mdwButtonPrimaryColor": "",
+        "mdwButtonSecondaryColor": "",
+        "mdwButtonColorPress": "",
+        "textFontFamily": "",
+        "textFontSize": 14,
+        "labelWidth": 0,
+        "image": "",
+        "imageColor": "",
+        "iconPosition": "left",
+        "iconHeight": 20,
+        "dialogMaxWidth": 800,
+        "viewHeight": 400,
+        "zIndex": 1000,
+        "closingClickOutside": true,
+        "viewDistanceToBorder": 16,
+        "backgroundColor": "",
+        "headerHeight": 48,
+        "headerBackgroundColor": "",
+        "footerHeight": 48,
+        "footerBackgroundColor": "",
+        "showDivider": false,
+        "dividerColor": "",
+        "overlayColor": "",
+        "overlayOpacity": 0.6,
+        "showTitle": true,
+        "dialogTitle": "",
+        "titleFontSize": 20,
+        "titleFont": "",
+        "titleColor": "",
+        "buttonPosition": "flex-end",
+        "buttonSize": "medium",
+        "buttonFullWidth": false,
+        "buttonText": "Schließen",
+        "buttonFontSize": 14,
+        "buttonFont": "",
+        "buttonFontColor": "",
+        "pressColor": "",
+        "fullscreenCloseIcon": "×",
+        "fullscreenCloseIconColor": "",
+        "fullscreenCloseIconPressColor": ""
+      },
+      "render": {
+        "kind": "material-dialog",
+        "valueKey": "labelText"
+      },
+      "propertyGroups": [
+        {
+          "label": "Allgemein",
+          "fields": [
+            {
+              "key": "designStyle",
+              "label": "Gestaltungsstil",
+              "type": "select",
+              "options": [
+                "legacy",
+                "material3",
+                "project"
+              ]
+            },
+            {
+              "key": "showAdvanced",
+              "label": "Erweiterte Optionen anzeigen",
+              "type": "checkbox"
+            },
+            {
+              "key": "themeMode",
+              "label": "Farbschema",
+              "type": "select",
+              "options": [
+                "project",
+                "light",
+                "dark"
+              ]
+            },
+            {
+              "key": "showDialogMethod",
+              "label": "Methode zum Anzeigen des Dialogs",
+              "type": "select",
+              "options": [
+                "button",
+                "datapoint"
+              ]
+            },
+            {
+              "key": "entityId",
+              "label": "Boolesche Entität zum Anzeigen des Dialogs",
+              "type": "text"
+            },
+            {
+              "key": "fullscreenResolutionLower",
+              "label": "Vollbild bei Bildschirmbreite bis (px)",
+              "type": "number",
+              "min": 0,
+              "max": 3000
+            },
+            {
+              "key": "vibrateOnMobilDevices",
+              "label": "Auf mobilen Geräten vibrieren (ms)",
+              "type": "number",
+              "min": 0,
+              "max": 1000
+            },
+            {
+              "key": "clickSoundPlay",
+              "label": "Klicksound abspielen",
+              "type": "checkbox"
+            },
+            {
+              "key": "clickSoundVolume",
+              "label": "Klicksound-Lautstärke",
+              "type": "range",
+              "min": 0,
+              "max": 1,
+              "step": 0.1
+            },
+            {
+              "key": "targetPage",
+              "label": "Ansicht",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Button Layout",
+          "fields": [
+            {
+              "key": "buttonStyle",
+              "label": "Schaltflächenstil",
+              "type": "select",
+              "options": [
+                "raised",
+                "outlined",
+                "text",
+                "icon"
+              ]
+            },
+            {
+              "key": "labelText",
+              "label": "Buttontext",
+              "type": "text"
+            },
+            {
+              "key": "mdwButtonPrimaryColor",
+              "label": "Primärfarbe",
+              "type": "color"
+            },
+            {
+              "key": "mdwButtonSecondaryColor",
+              "label": "Sekundäre Farbe",
+              "type": "color"
+            },
+            {
+              "key": "mdwButtonColorPress",
+              "label": "Farbe gedrückt",
+              "type": "color"
+            },
+            {
+              "key": "textFontFamily",
+              "label": "Schriftart",
+              "type": "text"
+            },
+            {
+              "key": "textFontSize",
+              "label": "Textgröße",
+              "type": "number",
+              "min": 8,
+              "max": 100
+            },
+            {
+              "key": "labelWidth",
+              "label": "Textbreite (%)",
+              "type": "range",
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            {
+              "key": "image",
+              "label": "Symbol (Text oder Unicode)",
+              "type": "text"
+            },
+            {
+              "key": "imageColor",
+              "label": "Symbolfarbe",
+              "type": "color"
+            },
+            {
+              "key": "iconPosition",
+              "label": "Symbolposition",
+              "type": "select",
+              "options": [
+                "left",
+                "right"
+              ]
+            },
+            {
+              "key": "iconHeight",
+              "label": "Symbolhöhe",
+              "type": "range",
+              "min": 8,
+              "max": 100,
+              "step": 1
+            }
+          ]
+        },
+        {
+          "label": "Layout Dialog",
+          "fields": [
+            {
+              "key": "dialogMaxWidth",
+              "label": "Maximale Breite (px)",
+              "type": "number",
+              "min": 160,
+              "max": 3000
+            },
+            {
+              "key": "viewHeight",
+              "label": "Höhe (px)",
+              "type": "number",
+              "min": 100,
+              "max": 3000
+            },
+            {
+              "key": "zIndex",
+              "label": "z-Index",
+              "type": "number",
+              "min": 0,
+              "max": 99999
+            },
+            {
+              "key": "closingClickOutside",
+              "label": "Schließen beim Klicken außerhalb",
+              "type": "checkbox"
+            },
+            {
+              "key": "viewDistanceToBorder",
+              "label": "Abstand zum Rand (px)",
+              "type": "number",
+              "min": 0,
+              "max": 100
+            },
+            {
+              "key": "backgroundColor",
+              "label": "Hintergrundfarbe",
+              "type": "color"
+            },
+            {
+              "key": "headerHeight",
+              "label": "Höhe der Kopfzeile",
+              "type": "number",
+              "min": 0,
+              "max": 300
+            },
+            {
+              "key": "headerBackgroundColor",
+              "label": "Hintergrundfarbe der Kopfzeile",
+              "type": "color"
+            },
+            {
+              "key": "footerHeight",
+              "label": "Höhe der Fußzeile",
+              "type": "number",
+              "min": 0,
+              "max": 300
+            },
+            {
+              "key": "footerBackgroundColor",
+              "label": "Hintergrundfarbe der Fußzeile",
+              "type": "color"
+            },
+            {
+              "key": "showDivider",
+              "label": "Trennlinie anzeigen",
+              "type": "checkbox"
+            },
+            {
+              "key": "dividerColor",
+              "label": "Farbe der Trennlinie",
+              "type": "color"
+            },
+            {
+              "key": "overlayColor",
+              "label": "Überlagerungsfarbe des Hintergrunds",
+              "type": "color"
+            },
+            {
+              "key": "overlayOpacity",
+              "label": "Deckkraft der Hintergrundüberlagerung",
+              "type": "range",
+              "min": 0,
+              "max": 1,
+              "step": 0.1
+            }
+          ]
+        },
+        {
+          "label": "Layout Kopfzeile",
+          "fields": [
+            {
+              "key": "showTitle",
+              "label": "Überschrift anzeigen",
+              "type": "checkbox"
+            },
+            {
+              "key": "dialogTitle",
+              "label": "Titel",
+              "type": "text"
+            },
+            {
+              "key": "titleFontSize",
+              "label": "Schriftgröße",
+              "type": "number",
+              "min": 8,
+              "max": 100
+            },
+            {
+              "key": "titleFont",
+              "label": "Schriftart",
+              "type": "text"
+            },
+            {
+              "key": "titleColor",
+              "label": "Schriftfarbe",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "label": "Layout der Schaltflächen in der Dialogfußzeile",
+          "fields": [
+            {
+              "key": "buttonPosition",
+              "label": "Schaltflächenposition",
+              "type": "select",
+              "options": [
+                "flex-start",
+                "center",
+                "flex-end"
+              ]
+            },
+            {
+              "key": "buttonSize",
+              "label": "Schaltflächengröße",
+              "type": "select",
+              "options": [
+                "small",
+                "medium",
+                "large"
+              ]
+            },
+            {
+              "key": "buttonFullWidth",
+              "label": "Schaltfläche in voller Breite",
+              "type": "checkbox"
+            },
+            {
+              "key": "buttonText",
+              "label": "Text des Schließen-Buttons",
+              "type": "text"
+            },
+            {
+              "key": "buttonFontSize",
+              "label": "Schriftgröße",
+              "type": "number",
+              "min": 8,
+              "max": 100
+            },
+            {
+              "key": "buttonFont",
+              "label": "Schriftart",
+              "type": "text"
+            },
+            {
+              "key": "buttonFontColor",
+              "label": "Schriftfarbe",
+              "type": "color"
+            },
+            {
+              "key": "pressColor",
+              "label": "Farbe gedrückt",
+              "type": "color"
+            },
+            {
+              "key": "fullscreenCloseIcon",
+              "label": "Vollbild-Symbol zum Schließen",
+              "type": "text"
+            },
+            {
+              "key": "fullscreenCloseIconColor",
+              "label": "Farbe des Vollbildsymbols",
+              "type": "color"
+            },
+            {
+              "key": "fullscreenCloseIconPressColor",
+              "label": "Farbe des Vollbildsymbols gedrückt",
+              "type": "color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

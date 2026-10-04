@@ -7,10 +7,11 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parent
 
 def build():
-    target = ROOT / 'dist' / 'ugso.materialdesign-0.1.0.wg'
+    version = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))['version']
+    target = ROOT / 'dist' / f'ugso.materialdesign-{version}.wg'
     target.parent.mkdir(exist_ok=True)
     with ZipFile(target, 'w') as archive:
-        for name in ['manifest.json', 'icons/palette.svg', 'LICENSE.txt', 'README.md']:
+        for name in ['manifest.json', 'icons/palette.svg', 'icons/dialog.svg', 'LICENSE.txt', 'README.md']:
             info = ZipInfo(name, (2026, 10, 4, 0, 0, 0))
             info.compress_type = ZIP_DEFLATED
             archive.writestr(info, (ROOT / name).read_text(encoding='utf-8').encode('utf-8'))
