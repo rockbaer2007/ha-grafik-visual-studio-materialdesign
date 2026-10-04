@@ -14,7 +14,10 @@ def build():
         for name in ['manifest.json', 'icons/palette.svg', 'icons/dialog.svg', 'LICENSE.txt', 'README.md']:
             info = ZipInfo(name, (2026, 10, 4, 0, 0, 0))
             info.compress_type = ZIP_DEFLATED
-            archive.writestr(info, (ROOT / name).read_text(encoding='utf-8').encode('utf-8'))
+            body = (ROOT / name).read_text(encoding='utf-8')
+            if name == 'manifest.json':
+                body = json.dumps(json.loads(body), ensure_ascii=False, separators=(',', ':'))
+            archive.writestr(info, body.encode('utf-8'))
     digest = hashlib.sha256(target.read_bytes()).hexdigest()
     (target.parent / 'SHA256SUMS').write_text(f'{digest}  {target.name}\n', encoding='utf-8')
     return target
