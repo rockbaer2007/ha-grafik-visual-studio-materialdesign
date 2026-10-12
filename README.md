@@ -38,6 +38,9 @@ Ansichten verwenden andere lokale Studio-Seiten mit Rekursionsschutz.
 `python create_comparison.py` erzeugt das importierbare Projekt unter `comparison/`.
 Es enthält neun Vergleichsseiten plus eine Referenzansicht, ohne echte HA-Entitäten.
 Der anschließende Widget-für-Widget-Vergleich prüft Originaloptik und Detailoptionen.
+Der [Quellcode-Abgleich vom 12.10.2026](comparison/AUDIT-2026-10-12.md) listet
+alle 49 Einträge und bestätigte Abweichungen auf. Die Grundfunktionen sind vorhanden,
+eine vollständige 1:1-Umsetzung der Originaloptionen und Darstellung ist noch offen.
 Es ist keine automatische ioBroker-Projektübernahme: ioBroker Theme-/Objekt-IDs,
 History-Adapter, Binding-Ausdrücke und ioBroker-Schreibdienste werden durch die
 Studio-/HA-Funktionen ersetzt. Nicht jede ioBroker-Detailoption hat eine Entsprechung;
