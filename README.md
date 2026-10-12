@@ -1,9 +1,74 @@
-# UGSo Material Design
+# Material Design
 
 Externes Widget-Set für HA Grafik Visual Studio, inspiriert von
 [ioBroker VIS2 Material Design](https://github.com/typhosj/ioBroker.vis2-materialdesign).
 
-Version **1.0.1**, MIT mit MDI-Icon-Lizenzhinweisen, benötigt Studio **0.1.216** oder neuer.
+Version **1.1.0**, MIT mit MDI-Icon-Lizenzhinweisen, benötigt Studio **0.1.292** oder neuer.
+
+## 1.1.0: Originalnähe und erhaltene Einstellungen
+
+Alle 49 Einträge sind weiterhin enthalten. Studio zeichnet Switches als Schalter,
+wendet Druckfarben sowie Griff-/Spurgrößen an und ergänzt Original-Eingabeformen,
+Masken, Icons, Mehrziel-Aktionen, Tabellen-/Listenlayouts, Tooltip-/Achsen-/Stack-
+Diagramme und App-Bar-Navigation mit Drawer. View-Auswahl unterstützt Zuordnung,
+Seitenname/ID oder Index; boolesche Werte entsprechen bei Indexwahl 0/1.
+Persistenz, Vorladen, responsive Spalten und Sichtbarkeit je Ansicht sind möglich.
+
+**Update:** zuerst Studio 0.1.292, dann das Paket 1.1.0 installieren. Bisherige
+Standardwerte, Felder, Reihenfolge und technische IDs bleiben erhalten. Neue Felder
+und Auswahlwerte werden ergänzt; die Installation schreibt keine Projektdatei um.
+Der bisherige State-Multi-Zyklus und die bisherigen View-Zuordnungen bleiben für
+alte Widgets aktiv. Neue Mehrziel-Aktionen und Index-/Namenswahl sind eigene Modi.
+Ein Projektbackup vor dem Update bleibt sinnvoll. Explizite Farben, Größen und Texte
+werden weiter verwendet. Es gibt keinen automatischen Import von ioBroker-Projekten.
+
+Material-Beschriftungen und Bedienung sind **DE/EN/FR**. „Material-Sprache“ folgt
+automatisch der Studio-Sprache oder wählt eine Sprache für Widget und Eigenschaften.
+Die Studio-Gesamtoberfläche bleibt DE/EN; Französisch betrifft hier Material.
+Benutzertexte, Entitäts-IDs, Seiten-IDs und gespeicherte Auswahlwerte bleiben unverändert.
+
+HA-Schreiben verwendet geprüfte Aktionen statt beliebiger ioBroker-State-Schreibvorgänge:
+switch/input_boolean, number/input_number, text/input_text, select/input_select,
+button/input_button (`PRESS`), Light-Helligkeit, Fan-Prozent und Cover-Position.
+Sensoren, Attribute und nicht verfügbare Entitäten bleiben geschützt. Verzögerte
+Mehrziel-Aktionen stoppen bei Fehlern oder Seitenwechsel; kein Rollback bereits
+ausgeführter HA-Aktionen. HTML-Listentexte werden bereinigt, HTML-Karten bleiben isoliert.
+
+Recorder bleibt auf zehn Entitäten und sieben Tage begrenzt. Aggregation unterstützt
+Durchschnitt, Minimum, Maximum, Summe und letzten Wert. SVG-Diagramme bieten bis zu
+vier Y-Achsen, Stacks, Füllung/Stufenlinien, Tooltips und Datenlabels; sie sind eine
+eigene Umsetzung. Pixelgleichheit mit allen ioBroker-Konfigurationen ist nicht zugesichert.
+
+`python complete_package.py`, `python create_comparison.py` und `python build.py`
+erzeugen Definitionen, Vergleichsprojekt und das reproduzierbare `.wg`.
+
+### English
+
+Material Design 1.1.0 requires Studio 0.1.292. All 49 entries remain available with
+original-style controls, input masks/icons, multiple-target actions, data layouts,
+charts and drawer navigation. Existing definitions/defaults and saved projects are
+preserved. Old value cycles and mapped views stay active; new modes are explicit.
+Material language follows Studio or selects DE/EN/FR independently. User text and
+technical IDs are never translated. The overall Studio interface remains DE/EN.
+HA uses supported, validated actions; sensors and attributes remain read-only.
+Failed or cancelled multiple-target actions do not roll back completed actions.
+History is limited to ten entities and seven days. There is no automatic ioBroker
+project import and no claim of universal pixel equivalence.
+
+### Français
+
+Material Design 1.1.0 nécessite Studio 0.1.292. Les 49 widgets restent disponibles,
+avec commandes proches de l’original, masques/icônes, actions multicibles,
+listes/tableaux/graphiques et navigation avec panneau latéral. Les anciennes valeurs,
+définitions et configurations sont conservées. Les cycles et associations de vues
+restent actifs ; les nouveaux modes se choisissent explicitement. La langue Material
+suit Studio ou choisit DE/EN/FR séparément. Les textes personnels et identifiants ne
+sont pas traduits. L’interface générale du Studio reste DE/EN. Les actions HA sont
+validées ; capteurs et attributs restent en lecture seule. Une erreur n’annule pas
+les actions multicibles déjà exécutées. Historique : dix entités et sept jours.
+Pas d’import automatique de projets ioBroker ni de garantie d’identité pixel parfaite.
+
+## Hintergrund der bisherigen Versionen
 
 Die Palette verwendet die originalen MDI-Symbole pro Widget: blau (#44739e),
 weiße Kachel und abgerundete Ecken. Alle 49 Zuordnungen liegen als lokale SVGs

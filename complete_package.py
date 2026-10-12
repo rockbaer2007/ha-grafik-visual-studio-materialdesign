@@ -98,4 +98,6 @@ def generate():
     return manifest
 
 if __name__=='__main__':
-    print(f"{len(generate()['widgets'])} widget definitions generated")
+    generate()
+    from upgrade_package import upgrade
+    print(f"{len(upgrade()['widgets'])} compatible widget definitions generated")

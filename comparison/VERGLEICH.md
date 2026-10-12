@@ -1,9 +1,10 @@
 # MaterialDesign: Widgetvergleich
 
-Paket 1.0.1 / Studio ab 0.1.216. Alle Einträge sind im Vergleichsprojekt enthalten.
+Paket 1.1.0 / Studio ab 0.1.292. Alle Einträge sind im Vergleichsprojekt enthalten.
 
-Die Spalten bleiben bis zum gemeinsamen Vergleich offen. Prüfen: kompakte und
-erweiterte Eigenschaften, Hell/Dunkel/Klassisch/Material 3, Zustandswechsel und Runtime.
+Die Browser-Matrix prüft DE/EN/FR und beide Stile mit Hell/Dunkel. Ein exakter
+Pixelvergleich jeder Originalkonfiguration bleibt eine separate Prüfung.
+Der Ausgangsaudit und die umgesetzten Funktionen stehen in README.md.
 
 | Nr. | Widget | Vergleichsseite | Optik | Optionen | Funktion |
 | --- | --- | --- | --- | --- | --- |
